@@ -1,3 +1,5 @@
+import Style from './layout.module.css'
+
 import OrderBook from "../order-book/order-book"
 import TradingView from "../trading-view/trading-view"
 import LiveTrades from "../live-trades/live-trades"
@@ -5,18 +7,20 @@ import LiveOrders from "../live-orders/live-orders"
 
 function Layout() {
     return(
-        <div>
+        <div className={Style.container}>
 
-            <div>
+            <div className={Style.content}>
+                first
                 <OrderBook/>
             </div>
 
-            <div>
+            <div className={Style.content}>
                 <TradingView/>
                 <LiveTrades/>
             </div>
 
-            <div>
+            <div className={Style.content}>
+                last
                 <LiveOrders/>
             </div>
 
