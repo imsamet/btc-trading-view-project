@@ -10,7 +10,6 @@ function Layout() {
         <div className={Style.container}>
 
             <div className={Style.content}>
-                first
                 <OrderBook/>
             </div>
 
@@ -20,7 +19,6 @@ function Layout() {
             </div>
 
             <div className={Style.content}>
-                last
                 <LiveOrders/>
             </div>
 

@@ -3,8 +3,10 @@
     height: 100vh;
     align-content: space-around;
     grid-template-columns: 1fr 2fr 1fr;
+    background-color: var(--theme);
 }
 .content{
+    color: var(--text);
     height: 100vh;
 }
 @media screen and (max-width: 992px) {
