@@ -1,0 +1,12 @@
+.item:nth-child(odd){
+    background-color: #80808029;
+}
+.item:hover{
+    background-color: #80808063;
+}
+.red{
+    color: var(--red);
+}
+.green{
+    color: var(--green);
+}
