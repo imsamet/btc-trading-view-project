@@ -1,8 +1,13 @@
 import Style from './order-book.module.css'
 
 import Item from './item/item'
+import { useEffect } from 'react'
+import { useOrderBook } from '../../hooks/useOrderBook'
 
 function OrderBook() {
+
+    const orderBook = useOrderBook()
+
     return(
         <div className={Style.container}>
             <div className={Style.content}>
@@ -15,27 +20,18 @@ function OrderBook() {
                         <th>Toplam</th>
                     </tr>
 
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
-                    <Item color={"red"}/>
+                    {
+                        orderBook.asks && orderBook.asks.map(value => {
+                            return(
+                                <Item
+                                    key={`orderBookAsk_${value[0]}`}
+                                    price={value[0]}
+                                    quantity={value[1]}
+                                    color={"red"}
+                                />
+                            )
+                        })
+                    }
  
                 </table>
 
@@ -51,29 +47,18 @@ function OrderBook() {
                         <th>Toplam</th>
                     </tr>
 
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
-                    <Item color={"green"}/>
+                    {
+                        orderBook.bids && orderBook.bids.map(value => {
+                            return(
+                                <Item
+                                    key={`orderBookAsk_${value[0]}`}
+                                    price={value[0]}
+                                    quantity={value[1]}
+                                    color={"green"}
+                                />
+                            )
+                        })
+                    }
 
                 </table>
 
