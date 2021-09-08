@@ -9,7 +9,10 @@ function LiveTrades() {
 
     return(
         <div className={Style.container}>
+
             <div>
+
+                <h1 className={Style.head}>İşlemlerim</h1>
 
                 <table className={Style.table}>
 

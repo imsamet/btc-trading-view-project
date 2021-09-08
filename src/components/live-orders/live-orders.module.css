@@ -4,6 +4,10 @@
 .content{
     overflow: scroll;
 }
+.head{
+    font-size: 15px;
+    color: var(--yellow);
+}
 .table{
     width: 100%;
     display: grid;

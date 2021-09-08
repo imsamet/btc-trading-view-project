@@ -25,7 +25,8 @@
         grid-template-columns: 1fr
     }
     .content:nth-child(1){
-        grid-area: 2 / 1
+        grid-area: 2 / 1;
+        height: auto;
     }
     
 }

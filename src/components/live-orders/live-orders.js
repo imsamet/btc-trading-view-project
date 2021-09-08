@@ -12,6 +12,8 @@ function LiveOrders() {
         <div className={Style.container}>
             <div className={Style.content}>
 
+                <h1 className={Style.head}>Piyasa Alım Satımları</h1>
+
                 <table className={Style.table}>
 
                     <thead>

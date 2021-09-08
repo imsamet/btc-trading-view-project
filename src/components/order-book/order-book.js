@@ -9,7 +9,10 @@ function OrderBook() {
 
     return(
         <div className={Style.container}>
+
             <div className={Style.content}>
+
+                <h1 className={Style.head}>Satış Emirleri</h1>
 
                 <table className={Style.table}>
 
@@ -45,6 +48,8 @@ function OrderBook() {
             </div>
 
             <div className={Style.content}>
+
+                <h1 className={Style.head}>Alış Emirleri</h1>
 
                 <table className={Style.table}>
 
