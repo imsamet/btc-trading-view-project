@@ -1,10 +1,5 @@
 .container{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
-    height: 100vh;
-}
-.content{
+    max-height: 100vh;
     overflow: scroll;
 }
 .table{
@@ -14,7 +9,7 @@
 }
 .table tr{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 5px 0;
     width: 100%;
     font-size: 11px;
