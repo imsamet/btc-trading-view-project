@@ -2,11 +2,11 @@ let socket;
 const query = {
     "event": 'bts:subscribe',
     "data": {
-      "channel": 'order_book_btcusd'
+      "channel": 'live_orders_btcusd'
     }
 };
 
-export const initOrderBook = (call) => {
+export const initLiveOrders = (call) => {
 
     socket = new WebSocket("wss://ws.bitstamp.net");
 

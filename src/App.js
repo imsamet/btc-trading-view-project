@@ -1,24 +1,33 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from "react-redux";
-import { Init } from './socket/orderBookApi'
 import './App.css';
 
 import Layout from './components/layout/layout';
-import { orderBookSocket } from './slices/orderBookSlice';
+
+import { useDispatch } from "react-redux";
+import { initOrderBook } from './socket/orderBookApi'
+import { initLiveOrders } from './socket/liveOrdersApi'
+
+import { orderBookAdd } from './slices/orderBookSlice';
+import { liveOrdersAdd } from './slices/liveOrdersSlice'
 
 function App() {
 
   const dispath = useDispatch()
 
   const orderBookCall = (data) => {
-    dispath(orderBookSocket(data))
+    dispath(orderBookAdd(data))
+  }
+
+  const liveOrderCall = (data) => {
+    dispath(liveOrdersAdd(data))
   }
 
   useEffect(() => {
 
-    Init(orderBookCall)
+    initOrderBook(orderBookCall)
+    initLiveOrders(liveOrderCall)
 
-  }, [])
+  })
 
   return (
     <>

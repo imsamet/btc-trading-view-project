@@ -1,7 +1,6 @@
 import Style from './order-book.module.css'
 
 import Item from './item/item'
-import { useEffect } from 'react'
 import { useOrderBook } from '../../hooks/useOrderBook'
 
 function OrderBook() {
@@ -14,24 +13,32 @@ function OrderBook() {
 
                 <table className={Style.table}>
 
-                    <tr>
-                        <th>Fiyat (USDT)</th>
-                        <th>Miktar (BTC)</th>
-                        <th>Toplam</th>
-                    </tr>
+                    <thead>
 
-                    {
-                        orderBook.asks && orderBook.asks.map(value => {
-                            return(
-                                <Item
-                                    key={`orderBookAsk_${value[0]}`}
-                                    price={value[0]}
-                                    quantity={value[1]}
-                                    color={"red"}
-                                />
-                            )
-                        })
-                    }
+                        <tr>
+                            <th>Fiyat (USDT)</th>
+                            <th>Miktar (BTC)</th>
+                            <th>Toplam</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {
+                            orderBook.asks && orderBook.asks.map(value => {
+                                return(
+                                    <Item
+                                        key={`orderBookAsk_${value[0]}`}
+                                        price={value[0]}
+                                        amount={value[1]}
+                                        color={"red"}
+                                    />
+                                )
+                            })
+                        }
+
+                    </tbody>
  
                 </table>
 
@@ -41,24 +48,32 @@ function OrderBook() {
 
                 <table className={Style.table}>
 
-                    <tr>
-                        <th>Fiyat (USDT)</th>
-                        <th>Miktar (BTC)</th>
-                        <th>Toplam</th>
-                    </tr>
+                    <thead>
 
-                    {
-                        orderBook.bids && orderBook.bids.map(value => {
-                            return(
-                                <Item
-                                    key={`orderBookAsk_${value[0]}`}
-                                    price={value[0]}
-                                    quantity={value[1]}
-                                    color={"green"}
-                                />
-                            )
-                        })
-                    }
+                        <tr>
+                            <th>Fiyat (USDT)</th>
+                            <th>Miktar (BTC)</th>
+                            <th>Toplam</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {
+                            orderBook.bids && orderBook.bids.map(value => {
+                                return(
+                                    <Item
+                                        key={`orderBookAsk_${value[0]}`}
+                                        price={value[0]}
+                                        amount={value[1]}
+                                        color={"green"}
+                                    />
+                                )
+                            })
+                        }
+
+                    </tbody>
 
                 </table>
 

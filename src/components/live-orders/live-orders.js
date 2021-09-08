@@ -1,55 +1,46 @@
-import Style from './live-order.module.css'
+import { useLiveOrders } from '../../hooks/useLiveOrders'
+import Style from './live-orders.module.css'
 
 import Item from './item/item'
+import { useState } from 'react'
 
 function LiveOrders() {
+
+    const liveOrders = useLiveOrders()
+
     return(
         <div className={Style.container}>
             <div className={Style.content}>
 
                 <table className={Style.table}>
 
-                    <tr>
-                        <th>Fiyat (USDT)</th>
-                        <th>Miktar (BTC)</th>
-                        <th>Saat</th>
-                    </tr>
+                    <thead>
 
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
-                        <Item
-                            price={1012}
-                            quantity={1234123}
-                            color={"red"}
-                        />
+                        <tr>
+                            <th>Fiyat (USDT)</th>
+                            <th>Miktar (BTC)</th>
+                            <th>Saat</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {
+                            liveOrders.map((value, index) => {
+                                return(
+                                    <Item
+                                        key={`${index}_${value.id}`}
+                                        price={value.price}
+                                        amount={value.amount}
+                                        datetime={value.datetime}
+                                        color={value.order_type ? "green" : "red"}
+                                    />
+                                )
+                            })
+                        }
+
+                    </tbody>
 
                 </table>
 

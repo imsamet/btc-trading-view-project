@@ -6,18 +6,16 @@ export const orderBookSlice = createSlice({
         value: {}
     },
     reducers: {
-        orderBookSocket: (state, action) => {
+        orderBookAdd: (state, action) => {
 
-            action.payload.asks && action.payload.bids ?
-                state.value = {
+            (action.payload.asks && action.payload.bids) &&
+                (state.value = {
                     asks: action.payload.asks.splice(0, 15),
                     bids: action.payload.bids.splice(0, 15)
-                }
-            :
-                state.value = {}
+                })
         }
     }
 })
 
-export const { orderBookSocket } = orderBookSlice.actions
+export const { orderBookAdd } = orderBookSlice.actions
 export default orderBookSlice.reducer;

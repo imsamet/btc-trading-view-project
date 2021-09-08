@@ -20,6 +20,6 @@
     font-size: 11px;
     text-align: justify;
 }
-.table tr:first-of-type{
+.table thead{
     border-bottom: 1px solid grey;
 }

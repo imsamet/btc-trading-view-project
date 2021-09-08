@@ -1,7 +1,4 @@
 .container{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
     max-height: 100vh;
 }
 .content{
@@ -20,6 +17,6 @@
     font-size: 11px;
     text-align: justify;
 }
-.table tr:first-of-type{
+.table thead{
     border-bottom: 1px solid grey;
 }
