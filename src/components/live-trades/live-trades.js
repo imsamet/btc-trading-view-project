@@ -6,7 +6,6 @@ import Style from './live-trades.module.css'
 function LiveTrades() {
 
     const liveTrades = useLiveTrades()
-    console.log(liveTrades)
 
     return(
         <div className={Style.container}>

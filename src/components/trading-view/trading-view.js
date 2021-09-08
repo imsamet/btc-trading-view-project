@@ -1,6 +1,15 @@
+import TradingViewWidget from 'react-tradingview-widget';
+
 function TradingView() {
+
     return(
-        <div></div>
+        <div>
+            <TradingViewWidget 
+                symbol="BITSTAMP:BTCUSD" 
+                theme="Dark"
+                autosize
+            />
+        </div>
     )
 }
 
