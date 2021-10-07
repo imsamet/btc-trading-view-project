@@ -1,3 +1,3 @@
 ## BTC Trading View Project
 
-Demo [Vercel](https://skyneb-test-project.vercel.app/)
+Demo [Vercel](https://btc-trading-view-project.vercel.app/)
